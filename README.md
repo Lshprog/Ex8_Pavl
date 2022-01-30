@@ -1,4 +1,5 @@
-# Ex8_Pavl
+#Onishchenko O, Ex8_Pavl
+
 code is here:
   connectorof.h,
   Ex8_Pavl.cpp,
