@@ -38,6 +38,12 @@ void parking::NodeList::car_out(const char* num) {
 		
 		if (!strcmp(node->data->car_num,num)){
 			std::cout << "Car with a num: " << node->data->car_num << " is leaving. It was out to let other cars go out " << node->data->times_out << " times." << std::endl;
+			if (head == tail) {
+				head = nullptr;
+				tail = nullptr;
+				delete node;
+				return;
+			}
 			if (node == head) {
 				iter = head->next;
 				while (true) {
@@ -65,14 +71,10 @@ void parking::NodeList::car_out(const char* num) {
 				}
 				(node->prev)->next = node->next;
 				(node->next)->prev = node->prev;
-				
-				
-					
-			}		
-			if (head == tail) {
-				head = nullptr;
-				tail = nullptr;
-			}
+
+			}	
+			
+			
 			delete node;
 			return;
 		}
