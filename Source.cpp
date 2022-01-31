@@ -47,20 +47,16 @@ void parking::NodeList::car_out(const char* num) {
 					iter = iter->next;
 				}
 				head = node->next;
-				delete node;
-				return;
+				
 			}
 			else if (node == tail) {
 				(node->prev)->next = nullptr;
 				tail = node->prev;
-				delete node;
-				return;
+				
 			}
 			else {
 				iter = node;
 				
-				(node->prev)->next = node->next;
-				(node->next)->prev = node->prev;
 				while (true) {
 					iter->data->times_out += 1;
 					if (iter == tail)
@@ -69,10 +65,16 @@ void parking::NodeList::car_out(const char* num) {
 				}
 				(node->prev)->next = node->next;
 				(node->next)->prev = node->prev;
-				delete node;
-				return;
+				
+				
 					
 			}		
+			if (head == tail) {
+				head = nullptr;
+				tail = nullptr;
+			}
+			delete node;
+			return;
 		}
 		if (node == tail) {
 			std::cout<<"There is no car with a num: "<<num<<" in the parking! "<<std::endl;
@@ -86,6 +88,10 @@ void parking::NodeList::car_out(const char* num) {
 
 void parking::NodeList::print()
 {
+	if ((tail==nullptr)&&(head == nullptr)) {
+		std::cout << "No cars in the parking" << std::endl;
+		return;
+	}
 	Node* iter = head;
 	while (true) {
 
