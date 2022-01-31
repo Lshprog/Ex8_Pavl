@@ -111,7 +111,7 @@ parking::NodeList::Node::Node(Car* data)
 
 void Startprog() {
 	char x[20];
-	char t[10];
+	char t[20];
 	std::cout << "Enter   1    if you want to park in your car " << std::endl;
 	std::cout << "Enter   0    if you want to pick up your car " << std::endl;
 	std::cout << "Enter   c    if you want to close the menu" << std::endl;
@@ -122,6 +122,10 @@ void Startprog() {
 		if (x[0] == '1') {
 			std::cout << "Enter number of your car:   ";
 			std::cin >> t;
+			if (strlen(t) > 8) {
+				std::cout << "Wrong car number! " << std::endl;
+				continue;
+			}
 			list.car_in(new parking::Car(true, t));
 			std::cout << "Something else?  " << std::endl;
 			continue;
@@ -129,11 +133,16 @@ void Startprog() {
 		else if (x[0] == '0') {
 			std::cout << "Enter number of your car:   ";
 			std::cin >> t;
+			if (strlen(t) > 8) {
+				std::cout << "Wrong car number! " << std::endl;
+				continue;
+			}
 			list.car_out(t);
 			std::cout << "Something else?  " << std::endl;
 			continue;
 		}
 		else if(x[0]=='p'){
+
 			list.print();
 			std::cout << "Something else?  " << std::endl;
 			continue;
