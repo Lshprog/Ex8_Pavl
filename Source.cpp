@@ -117,7 +117,7 @@ void Startprog() {
 	std::cout << "Enter   1    if you want to park in your car " << std::endl;
 	std::cout << "Enter   0    if you want to pick up your car " << std::endl;
 	std::cout << "Enter   c    if you want to close the menu" << std::endl;
-	std::cout << "Enter   p    if you want to print see the full list of the cars in the parking" << std::endl;
+	std::cout << "Enter   p    if you want to see the full list of the cars in the parking" << std::endl;
 	parking::NodeList list = parking::NodeList();
 	while (true) {
 		std::cin >> x;
