@@ -111,7 +111,7 @@ parking::NodeList::Node::Node(Car* data)
 	this->data = data;
 }
 
-void Startprog() {
+void startprog() {
 	char x[20];
 	char t[20];
 	std::cout << "Enter   1    if you want to park in your car " << std::endl;

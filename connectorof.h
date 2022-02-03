@@ -24,4 +24,4 @@ namespace parking {
 
 }
 
-void Startprog();
+void startprog();

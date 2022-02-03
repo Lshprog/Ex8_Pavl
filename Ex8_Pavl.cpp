@@ -4,7 +4,7 @@
 
 int main()
 {
-	Startprog();
+	startprog();
 	/*
 	list.car_in(new parking::Car("BB4443CH"));
 	list.car_in(new parking::Car("AB4213CH"));
