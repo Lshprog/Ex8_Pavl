@@ -128,7 +128,7 @@ void Startprog() {
 				std::cout << "Wrong car number! " << std::endl;
 				continue;
 			}
-			list.car_in(new parking::Car(true, t));
+			list.car_in(new parking::Car(t));
 			std::cout << "Something else?  " << std::endl;
 			continue;
 		}
