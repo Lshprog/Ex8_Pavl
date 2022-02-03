@@ -3,11 +3,29 @@
 #include <iostream>
 #include "connectorof.h"
 
-
+std::ostream& operator<<(std::ostream& out, const parking::Car& c) {
+	out << "Car num: " << c.car_num << "    ";
+	out << "Times out: " << c.times_out;
+	out << '\n';
+	return out;
+}
+/*
+std::istream& operator>>(std::istream& in, const parking::Car& c)
+{
+	in >> c.car_num;
+	return in;
+}
+*/
 
 parking::Car::Car(const char* num) {
 	//this->inside = inside;
 	strcpy_s(car_num, num);
+}
+void parking::Car::print()
+{
+	std::cout << "Car num: " <<this->car_num << "    ";
+	std::cout << "Times out: " <<this->times_out << std::endl;
+	//std::cout << this;
 }
 void parking::NodeList::car_in(Car* data) {
 	Node* node = new Node(data);
@@ -97,8 +115,9 @@ void parking::NodeList::print()
 	Node* iter = head;
 	while (true) {
 
-		std::cout <<"Car num: " <<iter->data->car_num <<"    ";
-		std::cout <<"Times out: " <<iter->data->times_out<< std::endl;
+		iter->data->print();
+		std::cout << *(iter->data);
+		
 	
 		if (iter == tail)
 			break;

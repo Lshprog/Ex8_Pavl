@@ -5,7 +5,9 @@ namespace parking {
 		int times_out=0;
 		char car_num[10];
 		Car(char const* num);
+		void print();
 	};
+	
 	struct NodeList {
 	private:
 		struct Node {
