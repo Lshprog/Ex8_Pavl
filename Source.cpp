@@ -5,8 +5,8 @@
 
 
 
-parking::Car::Car(bool inside, const char* num) {
-	this->inside = inside;
+parking::Car::Car(const char* num) {
+	//this->inside = inside;
 	strcpy_s(car_num, num);
 }
 void parking::NodeList::car_in(Car* data) {

@@ -1,10 +1,10 @@
 #pragma once
 namespace parking {
 	struct Car {
-		bool inside;
+		//bool inside;
 		int times_out=0;
 		char car_num[10];
-		Car(bool inside, char const* num);
+		Car(char const* num);
 	};
 	struct NodeList {
 	private:
